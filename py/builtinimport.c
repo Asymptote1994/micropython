@@ -253,6 +253,8 @@ mp_obj_t mp_builtin___import__(size_t n_args, const mp_obj_t *args) {
     }
     #endif
 
+    printk("file: %s, func: %s, line: %d\n", __FILE__, __func__, __LINE__);
+
     mp_obj_t module_name = args[0];
     mp_obj_t fromtuple = mp_const_none;
     mp_int_t level = 0;

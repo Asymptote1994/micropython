@@ -101,6 +101,7 @@ extern const mp_obj_module_t mp_module_gc;
 extern const mp_obj_module_t mp_module_thread;
 
 extern const mp_obj_dict_t mp_module_builtins_globals;
+extern const mp_obj_dict_t module_machine_globals;
 
 // extmod modules
 extern const mp_obj_module_t mp_module_uasyncio;

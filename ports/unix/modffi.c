@@ -29,7 +29,7 @@
 #include <string.h>
 #include <errno.h>
 #include <dlfcn.h>
-#include <ffi.h>
+#include <./build-standard/lib/libffi/include/ffi.h>
 #include <stdint.h>
 
 #include "py/runtime.h"

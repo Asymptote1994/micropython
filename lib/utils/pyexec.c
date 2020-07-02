@@ -135,12 +135,12 @@ STATIC int parse_compile_execute(const void *source, mp_parse_input_kind_t input
     // display debugging info if wanted
     if ((exec_flags & EXEC_FLAG_ALLOW_DEBUGGING) && repl_display_debugging_info) {
         mp_uint_t ticks = mp_hal_ticks_ms() - start; // TODO implement a function that does this properly
-        printf("took " UINT_FMT " ms\n", ticks);
+        printk("took " UINT_FMT " ms\n", ticks);
         // qstr info
         {
             size_t n_pool, n_qstr, n_str_data_bytes, n_total_bytes;
             qstr_pool_info(&n_pool, &n_qstr, &n_str_data_bytes, &n_total_bytes);
-            printf("qstr:\n  n_pool=%u\n  n_qstr=%u\n  "
+            printk("qstr:\n  n_pool=%u\n  n_qstr=%u\n  "
                 "n_str_data_bytes=%u\n  n_total_bytes=%u\n",
                 (unsigned)n_pool, (unsigned)n_qstr, (unsigned)n_str_data_bytes, (unsigned)n_total_bytes);
         }
@@ -437,13 +437,13 @@ friendly_repl_reset:
         uint32_t x[4] = {0x424242, 0xdeaddead, 0x242424, 0xdeadbeef};
         for (;;) {
             nlr_buf_t nlr;
-            printf("pyexec_repl: %p\n", x);
+            printk("pyexec_repl: %p\n", x);
             mp_hal_set_interrupt_char(CHAR_CTRL_C);
             if (nlr_push(&nlr) == 0) {
                 for (;;) {
                 }
             } else {
-                printf("break\n");
+                printk("break\n");
             }
         }
     }
@@ -580,7 +580,7 @@ int pyexec_frozen_module(const char *name) {
         #endif
 
         default:
-            printf("could not find module '%s'\n", name);
+            printk("could not find module '%s'\n", name);
             return false;
     }
 }

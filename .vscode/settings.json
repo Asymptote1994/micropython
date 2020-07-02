@@ -1,0 +1,12 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "restructuredtext.confPath": "${workspaceFolder}/docs",
+    "restructuredtext.linter.disabled": true,
+    "files.associations": {
+        "*.tcc": "c",
+        "cstdlib": "c",
+        "memory": "c",
+        "cstdio": "c",
+        "*.inc": "c"
+    }
+}
